@@ -30,7 +30,7 @@ app.get("/",async(req,res)=>{
 
 function makerandom(length){
       let res=''
-      let characters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+      let characters='abcdefghijklmnopqrstuvwxyz0123456789'
       let n=characters.length
       for(let i=0;i<length;i++){
         res+=characters.charAt(Math.floor(Math.random()*n))
@@ -67,17 +67,17 @@ app.get('/random',async(req,res)=>{
            if(data[0].level=="low"){
                  let a=Math.floor(Math.random()*5)+1
                 let ran=makerandom(a)
-               res.send({word:ran})
+                res.send({data:data,word:ran})
            }
            if(data[0].level=="high"){
             let a=Math.floor(Math.random()*15)+9
                  let ran=makerandom(a)
-                 res.send({word:ran})
+                 res.send({data:data,word:ran})
            }
           if(data[0].level=='medium'){
             let a=Math.floor(Math.random()*10)+5
                   let ran=makerandom(a)
-                  res.send({word:ran})
+                  res.send({data:data,word:ran})
            }
  
           
@@ -109,8 +109,6 @@ app.get('/random',async(req,res)=>{
         
        }
  })
-
-
 
 
 
