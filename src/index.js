@@ -4,7 +4,7 @@ const user = require("../Models/user.model")
 const cors = require("cors")
 const connect = require("../Connect/Connect")
 const req = require("express/lib/request")
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8080
 mongoose.set('strictQuery', true)
 
 
@@ -110,60 +110,6 @@ app.get('/random',async(req,res)=>{
        }
  })
 
-
-// app.post("/list",async(req,res)=>{
-     
-//     const date = new Date();
-
-//     let day = date.getDate();
-//     let month = date.getMonth() + 1;
-//     let year = date.getFullYear();
-   
-//     let postedAt = `${day}-${month}-${year}`
-//       console.log(typeof(postedAt))
-//     let list = {...req.body,postedAt}
-//     console.log(list)
-//     try {
-//        const data = await List.create(list)
-//        res.send({message:"Data added successfully",data:data})
-//     } catch (error) {
-//         res.status(501).send(error.message)
-//     }
-      
-    
-    
-// })
-
-
-
-
-
-// app.get("/list",async(req,res)=>{
-     
-//     const {page=1,limit=10,sort='asc',filter}=req.query
-//     if(filter){
-//         console.log(filter)
-//         try {
-//              let data=await List.find({role:filter}).sort({['postedAt']: sort==='asc' ? 1 : -1}).skip((page-1)*limit).limit(10)
-//              res.send({data:data})
-//         } catch (error) {
-//             res.status(501).send(error.message)
-//         }
-//     }
-//     else{
-
-//         try {
-//             const data=await List.find({})
-//             .sort({['postedAt']: sort==='asc' ? 1 : -1})
-//             .skip((page-1)*limit)
-//             .limit(limit)
-    
-//             res.send({data:data})
-//         } catch (error) {
-//             res.status(501).send(error.message)
-//         }
-//     }
-// })
 
 
 
